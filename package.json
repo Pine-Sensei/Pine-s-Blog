@@ -1,0 +1,15 @@
+{
+  "name": "pine",
+  "version": "0.1.0",
+  "description": "模仿 okmij.org/ftp/ 风格的极简静态博客",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2"
+  }
+}

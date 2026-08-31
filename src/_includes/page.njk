@@ -1,0 +1,10 @@
+{% extends "base.njk" %}
+{% block title %}{{ title }} — {{ site.title }}{% endblock %}
+{% block content %}
+<article>
+  <h1><a href="/">索引</a> » {{ title }}</h1>
+  {{ content | safe }}
+  <hr>
+  <p class="small"><a href="/">返回索引</a></p>
+</article>
+{% endblock %}

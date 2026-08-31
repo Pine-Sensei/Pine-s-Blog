@@ -1,0 +1,14 @@
+# 构建输出
+_site/
+
+# 依赖
+node_modules/
+
+# IDE
+.trae/
+.vscode/
+.idea/
+
+# 系统文件
+Thumbs.db
+.DS_Store

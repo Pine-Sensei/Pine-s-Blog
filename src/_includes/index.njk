@@ -1,0 +1,43 @@
+{% extends "base.njk" %}
+{% block content %}
+<h1 class="heading">{{ site.title }}</h1>
+<p class="heading small">本站内容若无特别说明，均采用
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可</p>
+{% if collections.postList.length %}
+<p class="heading"><a href="/changelog/"><strong>最近更新：</strong></a>
+  <strong>{{ collections.postList[0].date | isoDate }}</strong>
+  &nbsp;|&nbsp;
+  <a href="/feed.xml"><strong>RSS</strong></a>
+</p>
+{% else %}
+<p class="heading"><a href="/feed.xml"><strong>RSS</strong></a></p>
+{% endif %}
+<hr>
+
+{% if collections.shortcuts.length %}
+<p class="shortcuts"><em>Shortcuts</em>：
+  {%- for s in collections.shortcuts %}<a href="/tags/{{ s.tag }}/">{{ s.tag }}</a>{% if not loop.last %} <span class="sep">·</span> {% endif %}{% endfor %}
+</p>
+<hr>
+{% endif %}
+
+<div class="categories">
+  <dl>
+    <dt><strong><a href="/about/">关于我</a></strong></dt>
+  </dl>
+  {% for key, name in cats %}
+  {% set list = collections[key] %}
+  <dl>
+    <dt><strong><a href="/{{ key }}/">{{ name }}</a></strong></dt>
+    <dd class="small">
+      {%- for p in list %}{% if not loop.first %}; {% endif %}<a
+        href="{{ p.url }}">{{ p.data.title }}</a>{% endfor %};
+      <a href="/{{ key }}/">...</a>
+    </dd>
+  </dl>
+  {% endfor %}
+  <dl>
+    <dt><strong><a href="/links/">友链</a></strong></dt>
+  </dl>
+</div>
+{% endblock %}

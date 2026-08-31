@@ -1,0 +1,12 @@
+{% extends "base.njk" %}
+{% block title %}{{ tag }} — {{ site.title }}{% endblock %}
+{% block content %}
+<h1><a href="/">索引</a> » {{ tag }}</h1>
+<dl>
+  {% for p in collections[tag] | byDateDesc %}
+  <dt><a href="{{ p.url }}">{{ p.data.title }}</a></dt>
+  <dd class="small">{{ p.data.date | isoDate }} — {{ p.data.desc }}</dd>
+  {% endfor %}
+</dl>
+<p class="small"><a href="/">返回索引</a></p>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.njk" %}
+{% block title %}最近更新 — {{ site.title }}{% endblock %}
+{% block content %}
+<h1><a href="/">索引</a> » 最近更新</h1>
+<ul class="changelog">
+  {% for p in collections.postList %}
+  <li>{{ p.data.date | isoDate }} — <a href="{{ p.url }}">{{ p.data.title }}</a></li>
+  {% endfor %}
+</ul>
+<p class="small"><a href="/">返回索引</a></p>
+{% endblock %}

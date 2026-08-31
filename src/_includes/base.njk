@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ description or site.description }}">
+  <title>{% block title %}{{ site.title }}{% endblock %}</title>
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% block content %}{% endblock %}
+<footer class="site-footer">
+  <hr>
+  <p><a href="/">{{ site.title }}</a> · <a href="/about/">关于我</a> · <a href="/links/">友链</a> · <a href="/changelog/">最近更新</a> · <a href="/feed.xml">RSS</a></p>
+  <p class="small">© 2026 {{ site.title }} · <a href="https://beian.miit.gov.cn/">粤ICP备2025480969号-1</a></p>
+</footer>
+</body>
+</html>

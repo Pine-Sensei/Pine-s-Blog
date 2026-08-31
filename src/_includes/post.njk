@@ -1,0 +1,14 @@
+{% extends "base.njk" %}
+{% block title %}{{ title }} — {{ site.title }}{% endblock %}
+{% block content %}
+<article>
+  <h1>{{ title }}</h1>
+  <p class="meta small">{{ date | isoDate }} ·
+    <a href="/{{ category }}/">{{ cats[category] }}</a>
+    {%- set visibleTags = tags | reject("equalto", cats[category]) %}
+    {%- if visibleTags.length %} · {{ visibleTags | join(" · ") }}{% endif %}</p>
+  {{ content | safe }}
+  <hr>
+  <p class="small"><a href="/">返回索引</a></p>
+</article>
+{% endblock %}
