@@ -20,6 +20,6 @@ desc: 站点与作者简介。
 - Github： [个人主页](https://github.com/Pine-Sensei)
 - B站： [个人主页](https://space.bilibili.com/1622609178)
 - QQ： `1744117264`
-- 邮箱：`me@p1ne.top`或`pinesensei@163.com`
+- 邮箱：`me@p1ne.top`
 
 *最后更新：2026-10-22*
